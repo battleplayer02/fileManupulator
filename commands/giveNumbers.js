@@ -7,9 +7,11 @@ module.exports = function (dirpath) {
         olddata = olddata.map(line => {
             return val++ + '. ' + line
         })
-        let newdata = olddata.join('')
-        console.log(newdata);
-        fs.writeFileSync(dirpath, newdata);
+        // let newdata = ""
+        olddata.forEach(element => {
+            console.log(element);    
+        });
+        // fs.writeFileSync(dirpath, newdata);
         console.log('Given numbering to all the lines.')
     } else {
         console.log('File Not Found...!');

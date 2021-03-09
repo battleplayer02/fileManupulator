@@ -8,8 +8,9 @@ module.exports = function (dirpath) {
             return line == '\r' ? line : val++ + '. ' + line
         })
         let newdata = olddata.join('')
-        console.log(newdata);
-        fs.writeFileSync(dirpath, newdata);
+        olddata.forEach(element => {
+            console.log(element);    
+        });        // fs.writeFileSync(dirpath, newdata);
         console.log('Give numbering to non-empty lines.')
     } else {
         console.log('File Not Found...!');

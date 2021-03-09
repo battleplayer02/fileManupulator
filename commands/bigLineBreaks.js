@@ -8,8 +8,9 @@ module.exports = function (dirpath) {
         })
         // console.log(olddata);
         let newdata = olddata.join('')
-        console.log(newdata);
-        fs.writeFileSync(dirpath, newdata);
+        olddata.forEach(element => {
+            console.log(element);    
+        });        // fs.writeFileSync(dirpath, newdata);
         console.log('Converted big line breaks into a singular line break');
     } else {
         console.log('File Not Found...!');
