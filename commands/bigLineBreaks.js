@@ -1,3 +1,4 @@
+var fs = require('fs');
 module.exports = function (dirpath) {
     if (fs.statSync(dirpath).isFile()) {
         var olddata = fs.readFileSync(dirpath, 'utf8');
@@ -6,8 +7,9 @@ module.exports = function (dirpath) {
             return element !== '\r';
         })
         // console.log(olddata);
-        olddata = olddata.join('')
-        fs.writeFileSync(dirpath, olddata);
+        let newdata = olddata.join('')
+        console.log(newdata);
+        fs.writeFileSync(dirpath, newdata);
         console.log('Converted big line breaks into a singular line break');
     } else {
         console.log('File Not Found...!');

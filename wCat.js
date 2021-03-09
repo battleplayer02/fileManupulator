@@ -12,7 +12,7 @@ let showContent = require('./commands/showContent')
 if (options == '-s' || options == '-n' || options == '-b') {
 
     let dirpath = input[1]
-    switch (option) {
+    switch (options) {
         //3- node wcat.js -s filepath => convert big line breaks into a singular line break
         case '-s':
             bigLineBreaks(dirpath);
