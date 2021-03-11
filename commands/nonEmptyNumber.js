@@ -5,7 +5,7 @@ module.exports = function (dirpath) {
         olddata = olddata.split('\n');
         val = 1;
         olddata = olddata.map(line => {
-            return line == '\r' ? line : val++ + '. ' + line
+            return line == '' ? line : val++ + '. ' + line
         })
         let newdata = olddata.join('')
         olddata.forEach(element => {

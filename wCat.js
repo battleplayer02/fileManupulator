@@ -5,14 +5,10 @@ const defaultShowData = require('./commands/defaultShowData');
 const giveNumbers = require('./commands/giveNumbers');
 const nonEmptyNumber = require('./commands/nonEmptyNumber');
 let val = 0;
-
 let options = input[0]
 let showContent = require('./commands/showContent')
-
 if (options == '-s' || options == '-n' || options == '-b') {
-
     let dirpath = input[1]
-
     if (input.length <= 2) {
         switch (options) {
             //3- node wcat.js -s filepath => convert big line breaks into a singular line break
@@ -38,6 +34,11 @@ if (options == '-s' || options == '-n' || options == '-b') {
             bigLineBreaks(path)
             giveNumbers(path)
         }
+        else if(input.length == 3 && input[1] == '-n' && input[0] == '-s'){
+            let path = input[2]
+            bigLineBreaks(path)
+            bigLineBreaks(path);
+        }
         else if (input.length == 3 && input[0] == '-n' && input[1] == '-b') {
             let path = input[2]
             giveNumbers(path)
@@ -50,12 +51,8 @@ if (options == '-s' || options == '-n' || options == '-b') {
             console.log('Enter A Valid Option');
         }
     }
-
 } else {
-
-
     //1- node wcat.js filepath => displays content of the file in the terminal 
     //2- node wcat.js filepath1 filepath2 filepath3... => displays content of all files in the terminal(contactinated form) in the given order.
     defaultShowData(input);
-
 }
