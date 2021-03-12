@@ -6,7 +6,6 @@ const giveNumbers = require('./commands/giveNumbers');
 const nonEmptyNumber = require('./commands/nonEmptyNumber');
 
 let options = input[0]
-let showContent = require('./commands/showContent')
 if (options == '-s' || options == '-n' || options == '-b') {
     let dirpath = input[1]
     if (input.length <= 2) {
