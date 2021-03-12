@@ -4,7 +4,7 @@ const bigLineBreaks = require('./commands/bigLineBreaks');
 const defaultShowData = require('./commands/defaultShowData');
 const giveNumbers = require('./commands/giveNumbers');
 const nonEmptyNumber = require('./commands/nonEmptyNumber');
-let val = 0;
+
 let options = input[0]
 let showContent = require('./commands/showContent')
 if (options == '-s' || options == '-n' || options == '-b') {
@@ -37,7 +37,7 @@ if (options == '-s' || options == '-n' || options == '-b') {
         else if(input.length == 3 && input[1] == '-n' && input[0] == '-s'){
             let path = input[2]
             bigLineBreaks(path)
-            bigLineBreaks(path);
+            giveNumbers(path)
         }
         else if (input.length == 3 && input[0] == '-n' && input[1] == '-b') {
             let path = input[2]
